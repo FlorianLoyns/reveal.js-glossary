@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glossary — Demo</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/white.css">
+<style>
+  /* Navigationspfeile in Marine; auf dunklen Folien weiß */
+  .reveal .controls { color: #2C4A6E !important; }
+  .reveal.has-dark-background .controls { color: #fff !important; }
+  /* Überschriften in Marine */
+  .reveal h1, .reveal h2, .reveal h3 { color: #2C4A6E; }
+</style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section>
+      <h2>Glossary</h2>
+      <p style="font-size:.75em">Hover or tap an <span class="term" data-def="A highlighted word with a short explanation attached to it.">underlined term</span> to see its definition.</p>
+    </section>
+
+    <section>
+      <h3>Nursing example</h3>
+      <p style="font-size:.72em">The nurse documents a
+        <span class="term" data-def="A pressure ulcer: localised skin damage caused by sustained pressure, often over a bony area.">decubitus</span>
+        and starts
+        <span class="term" data-def="Preventive nursing measures, e.g. repositioning and skin care, to avoid a pressure ulcer.">prophylaxis</span>.</p>
+    </section>
+
+    <section>
+      <h3>Rich definitions</h3>
+      <p style="font-size:.72em">A definition may contain simple HTML, like
+        <span class="term" data-def="Care for people of <strong>all age groups</strong>, in <strong>all care settings</strong> — outpatient, acute and long-term.">generalistic education</span>.</p>
+      <p style="font-size:.5em;color:#888">Tap elsewhere or press Esc to close. Terms near the edge keep their tooltip on-screen.</p>
+    </section>
+  </div>
+</div>
+
+<footer style="position:fixed;left:0;right:0;bottom:6px;text-align:center;font-size:12px;font-family:system-ui,-apple-system,sans-serif;z-index:40;pointer-events:none;">
+  <a href="https://florianloyns.com/Impressum/" target="_blank" rel="noopener"
+     style="color:#8a99a8;text-decoration:none;pointer-events:auto;">Impressum</a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+<script src="plugin/glossary/glossary.js"></script>
+<script>
+  Reveal.initialize({ hash: true, plugins: [ RevealGlossary ] });
+</script>
+</body>
+</html>
