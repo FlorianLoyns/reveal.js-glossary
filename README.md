@@ -10,6 +10,8 @@ Inline term definitions for [reveal.js](https://revealjs.com). Mark a technical 
 
 ## Installation
 
+**Requires** reveal.js 4.2 or newer. Tested with reveal.js 5.x.
+
 Copy the `glossary` folder into your reveal.js `plugin/` folder — or install from npm.
 
 ```console
