@@ -46,7 +46,7 @@ Mark a term in your slide HTML and put the explanation in `data-def`:
 <span class="term" data-def="A pressure ulcer caused by sustained pressure on the skin.">Decubitus</span>
 ```
 
-The term gets a subtle underline. Hover or tap shows the definition; tapping elsewhere or pressing `Esc` closes it. Simple HTML such as `<strong>` is allowed inside a definition. Definitions live on each slide — there is no central glossary, so every deck controls its own terms, and the explanation stays with the word (handy for students at home).
+The term gets a subtle underline. Hover or tap shows the definition; tapping elsewhere or pressing `Esc` closes it. Terms near the left or right edge keep their tooltip on-screen automatically (the arrow stays over the word), and `Esc` only closes a tooltip when one is open — otherwise it stays out of reveal's way (overview). Simple HTML such as `<strong>` is allowed inside a definition. Definitions live on each slide — there is no central glossary, so every deck controls its own terms, and the explanation stays with the word (handy for students at home).
 
 ## Configuration
 
@@ -72,6 +72,17 @@ Reveal.initialize({
 | `tipBorder` | `'#E7EBEF'` | Popup border colour |
 
 Prefer a dark popup? Set `tipBg: '#1E3452'`, `tipColor: '#fff'`, `tipBorder: '#1E3452'`.
+
+## Changelog
+
+**1.1.0**
+
+- Tooltips stay on-screen near the left/right slide edge (arrow stays over the term).
+- `Esc` closes an open tooltip only when one is open — no longer competes with reveal's overview.
+- Terms expose `aria-expanded`; the close handler also works over elements that stop propagation (e.g. quiz buttons).
+- Docs corrected to the actual options (`line`, `tipBg`, `tipColor`, `tipBorder`).
+
+**1.0.0** — initial release.
 
 ## Like it?
 
