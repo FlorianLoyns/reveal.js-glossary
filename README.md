@@ -77,6 +77,10 @@ Prefer a dark popup? Set `tipBg: '#1E3452'`, `tipColor: '#fff'`, `tipBorder: '#1
 
 Star the repo.
 
+## Imprint
+
+Responsible: Florian Loyns — [imprint & privacy notice](https://florianloyns.com/Impressum/) (German)
+
 ## License
 
 MIT — see [LICENSE](LICENSE). Thanks to Hakim El Hattab (reveal.js).
