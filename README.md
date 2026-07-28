@@ -2,7 +2,7 @@
 
 [![reveal.js plugin](https://img.shields.io/badge/reveal.js-plugin-2C4A6E.svg)](https://revealjs.com) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-Inline term definitions for [reveal.js](https://revealjs.com). Mark a technical term on your slide and — on **hover** (desktop) or **tap** (touch / smartboard) — a small explanation pops up right next to it. Great for teaching: explain jargon without breaking your flow, and let students tap the terms themselves when reviewing at home. Standalone (ships its own CSS), colours are easy to theme.
+Inline term definitions for [reveal.js](https://revealjs.com). Mark a technical term on your slide and — on **hover** (desktop) or **tap** (touch / smartboard) — a small explanation pops up right next to it. When the deck is printed, the plugin appends **alphabetical glossary pages**, so the terms stay explained on paper too. Great for teaching: explain jargon without breaking your flow, and let students tap the terms themselves when reviewing at home. Standalone (ships its own CSS), colours are easy to theme.
 
 **[Live demo](https://florianloyns.github.io/reveal.js-glossary/demo.html)**
 
@@ -50,9 +50,13 @@ Mark a term in your slide HTML and put the explanation in `data-def`:
 
 The term gets a subtle underline. Hover or tap shows the definition; tapping elsewhere or pressing `Esc` closes it. Terms near the left or right edge keep their tooltip on-screen automatically (the arrow stays over the word), and `Esc` only closes a tooltip when one is open — otherwise it stays out of reveal's way (overview). Simple HTML such as `<strong>` is allowed inside a definition. Definitions live on each slide — there is no central glossary, so every deck controls its own terms, and the explanation stays with the word (handy for students at home).
 
+## Printing
+
+On paper there is no hover: the tooltip is gone and the term would sit there underlined but unexplained. So in reveal's print view (`?print-pdf`) the plugin collects every term in the deck, sorts them alphabetically and appends as many glossary pages as they need — two columns, each entry with its definition. Duplicates are dropped, sorting follows the `lang` attribute of your document, and the heights are measured before the pages are built, so no entry runs off the page. Set `printList: false` to switch it off.
+
 ## Configuration
 
-All options are optional — mainly for theming the colours.
+All options are optional.
 
 ```js
 Reveal.initialize({
@@ -60,7 +64,8 @@ Reveal.initialize({
     line: 'currentColor',   // underline colour
     tipBg: '#FFFFFF',        // popup background
     tipColor: '#0B1818',     // popup text colour
-    tipBorder: '#E7EBEF'     // popup border colour
+    tipBorder: '#E7EBEF',    // popup border colour
+    printTitle: 'Glossary'   // heading of the appended pages
   },
   plugins: [ RevealGlossary ]
 });
@@ -72,10 +77,22 @@ Reveal.initialize({
 | `tipBg` | `'#FFFFFF'` | Popup background |
 | `tipColor` | `'#0B1818'` | Popup text colour |
 | `tipBorder` | `'#E7EBEF'` | Popup border colour |
+| `printList` | `true` | Append glossary pages in `?print-pdf` |
+| `printTitle` | `'Glossary'` | Heading on the first appended page |
+| `printContinued` | `' (continued)'` | Added to the heading on every further page |
+| `printFontSize` | `19` | Entry font size in px; heading and spacing follow it |
+| `printPadding` | `60` | Page margin in px |
+| `printGap` | `46` | Gap between the two columns in px |
+| `printClass` | `''` | Extra class on each appended `<section>`, for theming |
 
 Prefer a dark popup? Set `tipBg: '#1E3452'`, `tipColor: '#fff'`, `tipBorder: '#1E3452'`.
 
 ## Changelog
+
+**1.2.0**
+
+- Printing appends alphabetical glossary pages so terms stay explained on paper (`printList` and friends).
+- Entry heights are measured before pagination, and columns are balanced instead of filled to the brim.
 
 **1.1.0**
 

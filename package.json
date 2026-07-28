@@ -1,8 +1,8 @@
 {
   "name": "reveal.js-glossary",
-  "version": "1.1.0",
-  "description": "Inline term definitions for reveal.js: mark a term, hover or tap it, and a short explanation pops up next to it.",
-  "keywords": "reveal, reveal.js, glossary, tooltip, definition, terms, teaching, reveal-plugin, plugin",
+  "version": "1.2.0",
+  "description": "Inline term definitions for reveal.js: mark a term, hover or tap it, and a short explanation pops up next to it. Printing appends alphabetical glossary pages.",
+  "keywords": "reveal, reveal.js, glossary, tooltip, definition, terms, teaching, print, handout, reveal-plugin, plugin",
   "homepage": "https://github.com/florianloyns/reveal.js-glossary",
   "repository": {
     "type": "git",
